@@ -1,0 +1,1405 @@
+/*-----------------------------------------------*/
+/*                    BARRE DE NAV               */
+/*-----------------------------------------------*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/*import des polices d'écritures */
+@font-face {
+  font-family: 'HP simplified';
+  src: url('../fonts/hp-simplified.ttf')
+}
+@font-face {
+  font-family: 'trebuchet';
+  src: url('../fonts/trebuchet.ttf');
+}
+/*barre de navigation*/
+nav {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    background-color: white;
+    box-shadow: 0px 2px 20px 0px grey;
+    z-index: 1000;
+}
+/*positionnement du logo*/
+#logo {
+    position: absolute;
+    bottom: -23px;
+    display: flex;
+    width: 300px;
+    height: 150%;
+}
+/*positionement de l'icon profil*/
+#profil{
+    position: relative;
+    margin-top: 15px;
+    width: 90px;
+}
+/*couche exterieur du logo*/
+#layout {
+    width: 380px;
+    margin-left: 40px;
+}
+
+nav div {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    justify-content: flex-end;
+    align-items: center;
+}
+/*positionnement des bouton dans la barre de nav*/
+nav div a {
+    position: relative;
+    font-family: 'HP simplified';
+    margin-left: 5%;
+    margin-right: 5%;
+    text-decoration: none;
+    color: #006699;
+    font-size: 42px;
+    text-transform: capitalize;
+}
+nav div a:hover {
+    color: purple;
+}
+/*positionnement des barres separent les bouton*/
+.menu::after{
+    content:'';
+    width: 1px;
+    height: 57px;
+    position: absolute;
+    left: -75px;
+    bottom: -3px;
+    border-left: 1px solid grey;
+    box-shadow: -0.5px 0.5px 2px 0px rgba(0, 0, 0, 0.2);
+}
+/*positionnement de la barre entre l'icon de profil des boutons*/
+#relat::after{
+    content:'';
+    width: 1px;
+    height: 75px;
+    position: absolute;
+    left: -30px;
+    bottom: 20px;
+    border-left: 1px solid grey;
+    box-shadow: -0.5px 0.5px 2px 0px rgba(0, 0, 0, 0.2);
+}
+/*separation de l'icon profil des autres bouton*/
+nav div a:last-child {
+    margin-right: 4%;
+    margin-left: 12%;
+    
+}
+#logo-low {
+    visibility: hidden;
+}
+/*-----------------------------------------------*/
+/*                    ACCUEIL                    */
+/*-----------------------------------------------*/
+#carou {
+    width: 100%;
+    margin-top: 3%;
+}
+/*petite section pour afficher les places restantes a l'evenement en cour*/
+#under_carou {
+    display: flex;
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+    font-family: 'trebuchet MS';
+    padding: 10px 100px 10px;
+    box-shadow: 0px 5px 20px -3px grey;
+    background-color: #566378;
+    z-index: 200;
+}
+/*rangement des prochaines cases en colonnes et centrer*/
+#accueil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+/*premier conteneur*/
+#Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    padding-top: 50px;
+    padding-bottom: 60px;
+    width: 90%;
+}
+/*la classe present qui vas permettre de presenter les grands axe de l'entreprises*/
+.present {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    height: 200px;
+    box-shadow: 0px 0px 20px -1px grey;
+}
+/*partie titre de la boite*/
+.present p {
+    background-color: #566378;
+    font-family: "HP simplified";
+    font-size: 40px;
+    color:white;
+    padding-left: 130px;
+    padding-right: 130px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/*mettre en majuscule la premiere lettre des paragraphes dans les boites*/
+.present p::first-letter{
+    text-transform: capitalize;
+}
+/*centrage de l'image check au milieu de la boite en dessou du paragraphe*/
+.check {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    width: 73px;
+    height: 72px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    align-self: center;
+}
+#avis {
+    position: relative;
+    width: 90%;
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 80px;
+}
+#circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    background-color: #566378;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px -1px grey;
+}
+#circle img{
+    width: 190px;
+    height: 230px;
+}
+#avis p{
+    display: flex;
+    color: #566378;
+    font-family: "HP simplified";
+    font-weight: bold;
+    font-size: 40px;
+    margin-left: 30px;
+    align-self: center;
+    width: 70%;
+}
+#forme {
+    display: flex;
+    position: absolute;
+    align-self: center;
+    box-shadow: 0px 0px 20px -1px grey;
+    width: 100%;
+    height: 80%;
+    z-index: -100;
+}
+#forme p{
+    position: absolute;
+    bottom: 10px;
+    right: -600px;
+    font-size: 30px;
+}
+#foot {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 50px;
+    padding-right: 50px;
+    align-items: center;
+    width: 100%;
+    background-color: #566378;
+    height: 100px;
+    border-top: 2px solid black;
+    font-family: HP simplified;
+    font-size: 40px;
+}
+#foot a {
+    text-decoration: none;
+    color: white;
+}
+/*-----------------------------------------------*/
+/*                   CONNEXION                   */
+/*-----------------------------------------------*/
+#connexion {
+    padding-top: 200px;
+    padding-bottom: 169px;
+    justify-content: center;
+    display: flex;
+}
+#connexion div {
+    width: 35%;
+    box-shadow: 0px 0px 20px -1px black;
+    height: 500px;
+}
+#titre_connexion {
+    display: flex;
+    font-family: HP simplified;
+    color: #566378;
+    font-size: 40px;
+    text-transform: capitalize;
+    text-decoration: underline;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#connexion form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 35%;
+}
+#connexion form input {
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 7px -1px black;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 300px;
+    height: 40px;
+    font-size: 15px;
+}
+#connexion form button{
+    font-family: HP simplified;
+    font-size: 20px;
+    color: black;
+    width: 150px;
+    height: 40px;
+    border-radius: 40px;
+    box-shadow: 0px 0px 7px -1px black;
+}
+#p_inscri {
+    display: flex;
+    justify-content: center;
+    font-family: HP simplified;
+    text-decoration: underline;
+    color: dodgerblue;
+    margin-top: 50px;
+}
+#foot_connexion {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 50px;
+    padding-right: 50px;
+    align-items: center;
+    width: 100%;
+    background-color: #566378;
+    height: 100px;
+    border-top: 2px solid black;
+    font-family: HP simplified;
+    font-size: 40px;
+}
+#foot_connexion a {
+    text-decoration: none;
+    color: white;
+}
+/*-----------------------------------------------*/
+/*                    CONTACT                    */
+/*-----------------------------------------------*/
+#contact {
+    padding-top: 150px;
+    padding-bottom: 50px;
+    justify-content: center;
+    display: flex;
+}
+#contact-layout {
+    display: flex;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    flex-direction: row;
+    width: 90%;
+    box-shadow: 0px 0px 20px -1px black;
+}
+#contact-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+}
+#titre-contact {
+    display: flex;
+    font-family: HP simplified;
+    padding-bottom: 30px;
+    color: #566378;
+    font-size: 40px;
+    text-decoration: underline;
+}
+#contact-form form{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 90%;
+}
+#contact-form form label input{
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 7px -1px black;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 400px;
+    height: 40px;
+    font-size: 15px;
+}
+#textarea {
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 7px -1px black;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 500px;
+    height: 120px;
+    font-size: 15px;
+    margin-left: 10%;
+    font-family: HP simplified;
+	resize: block;
+}
+#contact button {
+    font-family: HP simplified;
+    font-size: 20px;
+    color: black;
+    width: 150px;
+    height: 40px;
+    border-radius: 40px;
+    box-shadow: 0px 0px 7px -1px black;
+}
+#addons {
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    width: 50%;
+}
+#pub {
+    display: flex;
+    width: 350px;
+    height: 475px;
+    align-self: center;
+    padding-bottom: 40px;
+}
+#insta {
+    width: 75px;
+}
+#facebook {
+    width: 75px;
+}
+#twitter {
+    width: 75px;
+}
+#reseaux p {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    justify-content: center;
+    font-family: HP simplified;
+    font-size: 35px;
+}
+#reseaux{
+    display: flex;
+    box-shadow: 0px 0px 20px -1px grey;
+    flex-direction: column;
+    width: 70%;
+    align-self: center;
+}
+#image-reseau {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#image-reseau img {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+/*-----------------------------------------------*/
+/*                NOS EVENEMENTS                 */
+/*-----------------------------------------------*/
+#our-event {
+    padding-top: 150px;
+    padding-bottom: 50px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+.our-event-layout {
+    display: flex;
+    flex-direction: row;
+    height: 630px;
+    box-shadow: 0px 0px 20px -1px black;
+    width: 90%;
+    margin-bottom: 3%;
+}
+.img-event {
+    width: 55%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.main-img-event {
+    padding-top: 5%;
+    width: 90%;
+    height: 63%;
+}
+.container-sub-img {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 30%;
+    margin-top: 1%;
+}
+.sub-img-event {
+    width: 40%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+}
+.texte-event {
+    display: flex;
+    flex-direction: column;
+}
+.head {
+    padding-top: 2%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #566378;
+}
+.titre-event {
+    font-family: HP simplified;
+    font-size: 50px;
+    text-decoration: underline;
+    color: white;
+}
+.date {
+    font-family: HP simplified;
+    font-size: 20px;
+    color: white;
+}
+.resume{
+    margin-left: 30px;
+    margin-top: 40px;
+    margin-right: 40px;
+    font-family: HP simplified;
+    font-size: 19px;
+}
+/*-----------------------------------------------*/
+/*                EVENT PASSER                   */
+/*-----------------------------------------------*/
+#event-passer {
+    padding-top: 150px;
+    padding-bottom: 50px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+.event-passer-layout {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 20px -1px black;
+    width: 90%;
+    margin-bottom: 3%;
+}
+.event-passer-head {
+    display: flex;
+    flex-direction: row;
+    
+}
+.main-img-event-passer {
+    padding-top: 5%;
+    width: 90%;
+}
+.image-reseau-event-passer {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+    height: 75px;
+    margin-right: 60px;
+    margin-top:30px;
+}
+
+.galerie-prev {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.galerie-prev img {
+    height: 300px;
+    margin-bottom: 30px;
+}
+.galerie-prev a {
+    text-decoration: underline;
+    color: black;
+    font-family: HP simplified;
+    font-size: 25px;
+}
+.sur-place {
+    margin-left: 50px;
+}
+.sur-place h1 {
+    font-size: 35px;
+    color: black;
+    font-family: HP simplified;
+    margin-bottom: 40px;
+}
+.text-form-event-passer p{
+    margin-bottom: 50px;
+    font-size: 18px;
+    font-family: HP simplified;
+}
+.commentaire-layout {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    width: 95%;
+    align-self: center;
+    margin-bottom: 50px;
+}
+.rate {
+    display: flex;
+    align-items: center;
+}
+.rate img {
+    margin-top: 10px;
+    height: 30px;
+}
+.username {
+    margin-top: 10px;
+    margin-left: 20px;
+    font-family: HP simplified;
+    font-size: 25px;
+    margin-right: 10%;
+    margin-bottom: 20px;
+}
+.user-comment-layout {
+    box-shadow: 0px 0px 20px -1px grey;
+    margin-top: 15px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+.commentaire {
+    font-family: HP simplified;
+    font-size: 17px;
+    margin-left: 60px;
+    margin-bottom: 30px;
+}
+.comment-head {
+    font-family: HP simplified;
+    font-size: 30px;
+    margin-top: 40px;
+    margin-left: 30px;
+}
+/*-----------------------------------------------*/
+/*                  RESPONSIVE                   */
+/*-----------------------------------------------*/
+@media all and (min-width:1593px) and (max-width:1839px){
+    #Container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: row wrap;
+        padding-top: 50px;
+        padding-bottom: 60px;
+    }
+    #Container div:nth-child(1) {
+        order:2;
+    }
+    #Container div:nth-child(2) {
+        order:1;
+    }
+    #Container div:nth-child(3) {
+        order:3;
+    }
+    .present {
+        margin-right: 30px;
+        margin-left: 30px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .present:nth-child(1) p{
+        padding-left: 230px;
+        padding-right: 230px;
+    }
+    .present:nth-child(2) p{
+        padding-left: 500px;
+        padding-right: 500px;
+    }
+    .present:nth-child(3) p{
+        padding-left: 230px;
+        padding-right: 230px;
+    }
+    .present p {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    #under_carou{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        width: 80%;
+        text-align: center;
+    }
+    #forme p{
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        font-size: 30px;
+    }
+}
+@media all and (min-width:1350px) and (max-width:1592px){
+    #carou {
+        margin-top: 100px;
+    }
+    #logo {
+        bottom: 2px;
+        width: 200px;
+        height: 100%;
+    }
+    nav div a {
+        font-size: 35px;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+    }
+    nav div a:nth-child(2) {
+
+    }
+    .menu::after{
+        width: 1px;
+        height: 57px;
+        position: absolute;
+        left: -30px;
+        border-left: 1px solid grey;
+        box-shadow: -0.5px 0.5px 2px 0px rgba(0, 0, 0, 0.2);
+    }
+    nav div a:nth-child(3) {
+        margin-right: 15%;
+    }
+    #Container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: row wrap;
+        padding-top: 50px;
+        padding-bottom: 60px;
+    }
+    #Container div:nth-child(1) {
+        order:2;
+    }
+    #Container div:nth-child(2) {
+        order:1;
+    }
+    #Container div:nth-child(3) {
+        order:3;
+    }
+    .present {
+        margin-right: 30px;
+        margin-left: 30px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    nav div a:last-child {
+        margin-right: 6%;
+        margin-left: 6%;
+    }
+    .present:nth-child(1) p{
+        padding-left: 180px;
+        padding-right: 180px;
+    }
+    .present:nth-child(2) p{
+        padding-left: 400px;
+        padding-right: 400px;
+    }
+    .present:nth-child(3) p{
+        padding-left: 180px;
+        padding-right: 180px;
+    }
+    #avis {
+        justify-content: center;
+    }
+    #avis p{
+        padding-top: 30px;
+        margin-bottom: 250px;
+    }
+    .present p {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    #under_carou{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 38px;
+        width: 80%;
+        text-align: center;
+    }
+    #forme p{
+        position: absolute;
+        bottom: -23%;
+        left: 30%;
+        font-size: 30px;
+    }
+    #reseaux p {
+        text-align: center;
+    }
+}
+@media all and (min-width:1000px) and (max-width:1349px){
+    #carou {
+        margin-top: 100px;
+    }
+    #logo {
+        bottom: 2px;
+        width: 200px;
+        height: 100%;
+    }
+     nav div a {
+        font-size: 35px;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+    }
+    nav div a:nth-child(2) {
+
+    }
+    .menu::after{
+        width: 1px;
+        height: 57px;
+        position: absolute;
+        left: -23px;
+        bottom: -9px;
+        border-left: 1px solid grey;
+        box-shadow: -0.5px 0.5px 2px 0px rgba(0, 0, 0, 0.2);
+    }
+    #Container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: row wrap;
+        padding-top: 50px;
+        padding-bottom: 60px;
+    }
+    #Container div:nth-child(1) {
+        order:2;
+    }
+    #Container div:nth-child(2) {
+        order:1;
+    }
+    #Container div:nth-child(3) {
+        order:3;
+    }
+    .present {
+        margin-right: 30px;
+        margin-left: 30px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    nav div a:last-child {
+        margin-right: 6%;
+        margin-left: 6%;
+    }
+    .present:nth-child(1) p{
+        padding-left: 140px;
+        padding-right: 140px;
+    }
+    .present:nth-child(2) p{
+        padding-left: 300px;
+        padding-right: 300px;
+    }
+    .present:nth-child(3) p{
+        padding-left: 140px;
+        padding-right: 140px;
+    }
+     #avis {
+        justify-content: center;
+    }
+    #avis p{
+        padding-top: 30px;
+        margin-bottom: 250px;
+    }
+    .present p {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    #under_carou{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 36px;
+        width: 80%;
+        text-align: center;
+    }
+    #foot {
+        font-size: 30px;
+    }
+    #forme p{
+        position: absolute;
+        bottom: -23%;
+        left: 25%;
+        font-size: 30px;
+    }
+    #reseaux p {
+        text-align: center;
+    }
+}
+@media all and (min-width:990px) and (max-width:1150px){
+
+    #carou {
+        margin-top: 100px;
+    }
+    nav div a {
+        font-size: 30px;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+    }
+    #layout {
+        margin-left: 15px;
+        width: 100px;
+    }
+    #logo {
+        bottom: 2px;
+        width: 200px;
+        height: 100%;
+    }
+    nav div a:nth-child(1) {
+/*        visibility: hidden;*/
+    }
+    nav div a:nth-child(2) {
+        margin-right: 40px;
+    }
+    nav div a:nth-child(3) {
+        margin-left: 0px;
+    }
+    .menu::after{
+        width: 1px;
+        height: 57px;
+        position: absolute;
+        left: -19px;
+        bottom: -12px;
+        border-left: 1px solid grey;
+        box-shadow: -0.5px 0.5px 2px 0px rgba(0, 0, 0, 0.2);
+    }
+    nav div div {
+        margin-right: 30px;
+    }
+    #Container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: row wrap;
+        padding-top: 50px;
+        padding-bottom: 60px;
+    }
+    #Container div:nth-child(1) {
+        order:2;
+    }
+    #Container div:nth-child(2) {
+        order:1;
+    }
+    #Container div:nth-child(3) {
+        order:3;
+    }
+    .present {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    nav div a:last-child {
+        margin-right: 6%;
+        margin-left: 6%;
+    }
+    .present:nth-child(1) p{
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    .present:nth-child(2) p{
+        padding-left: 230px;
+        padding-right: 230px;
+    }
+    .present:nth-child(3) p{
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    #avis {
+        justify-content: center;
+    }
+    #avis p{
+        padding-top: 30px;
+        margin-bottom: 250px;
+    }
+    #under_carou{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 33px;
+        width: 80%;
+        text-align: center;
+    }
+    #foot {
+        font-size: 30px;
+    }
+    #forme p{
+        position: absolute;
+        bottom: -23%;
+        left: 20%;
+        font-size: 30px;
+    }
+    /*-------------------contact-------------------*/
+    #reseaux p {
+        text-align: center;
+    }
+    #contact-layout {
+        flex-direction: column;
+    }
+    #contact-form {
+        width: 100%;
+        height: 30%;
+    }
+    #addons {
+        align-self: center;
+    }
+    
+}
+@media all and (min-width:780px) and (max-width:989px){
+    #carou {
+        margin-top: 100px;
+    }
+    nav div a {
+        font-size: 28px;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+    }
+    #layout {
+        margin-left: 15px;
+        width: 100px;
+    }
+    #logo {
+        bottom: 2px;
+        width: 200px;
+        height: 100%;
+    }
+    nav div a:nth-child(1) {
+        visibility: hidden;
+        width: 0px;
+        height: 0px;
+    }
+    nav div a:nth-child(2) {
+        
+    }
+    #Container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: row wrap;
+        padding-top: 50px;
+        padding-bottom: 60px;
+    }
+    #Container div:nth-child(1) {
+        order:2;
+    }
+    #Container div:nth-child(2) {
+        order:1;
+    }
+    #Container div:nth-child(3) {
+        order:3;
+    }
+    .present {
+        margin-right: 20px;
+        margin-left: 20px;
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+    nav div a:last-child {
+        margin-right: 6%;
+        margin-left: 6%;
+    }
+    #avis {
+        justify-content: center;
+    }
+    #forme {
+        padding-bottom:;
+    }
+    #avis p{
+        padding-top: 30px;
+        margin-bottom: 200px;
+        font-size: 25px;
+    }
+/*
+    nav div a:nth-child(3) {
+        visibility: hidden;
+        width: 0px;
+        height: 0px;
+        margin: 0px;
+    }
+*/
+    .menu::after{
+        width: 1px;
+        height: 57px;
+        position: absolute;
+        left: -11px;
+        bottom: -12px;
+        border-left: 1px solid grey;
+        box-shadow: -0.5px 0.5px 2px 0px rgba(0, 0, 0, 0.2);
+    }
+    nav div div {
+        margin-right: 30px;
+    }
+    .present:nth-child(1) p{
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+    .present:nth-child(2) p{
+        padding-left: 180px;
+        padding-right: 180px;
+    }
+    .present:nth-child(3) p{
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+    .present p {
+        font-size: 30px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .check {
+        width: 52px;
+        height: 53px;
+    }
+    #under_carou{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        text-align: center;
+    }
+    #foot {
+        font-size: 30px;
+    }
+    #forme p{
+        position: absolute;
+        bottom: -23%;
+        left: 17%;
+        font-size: 25px;
+    }
+    #reseaux p {
+        text-align: center;
+    }
+}
+@media all and (min-width:556px) and (max-width:779px){
+    #carou {
+        margin-top: 100px;
+    }
+    nav div a {
+        font-size: 23px;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+    }
+    #layout {
+        margin-left: 15px;
+        width: 100px;
+    }
+    #logo {
+        bottom: 2px;
+        width: 200px;
+        height: 100%;
+    }
+    nav div a:nth-child(1) {
+        visibility: hidden;
+        width: 0px;
+        height: 0px;
+    }
+    
+    nav div a:nth-child(2) {
+        
+    }
+    nav div a:nth-child(3) {
+        visibility: visible;
+    }
+    .menu::after{
+        width: 1px;
+        height: 57px;
+        position: absolute;
+        left: -11px;
+        bottom: -15px;
+        border-left: 1px solid grey;
+        box-shadow: -0.5px 0.5px 2px 0px rgba(0, 0, 0, 0.2);
+    }
+    nav div div {
+        margin-right: 30px;
+    }
+    #profil {
+        position: relative;
+        margin-top: 5px;
+        width: 70px;
+    }
+    #relat::after{
+        content:'';
+        width: 1px;
+        height: 75px;
+        position: absolute;
+        left: -30px;
+        bottom: 5px;
+        border-left: 1px solid grey;
+        box-shadow: -0.5px 0.5px 2px 0px rgba(0, 0, 0, 0.2);
+    }
+    #logo {
+        visibility: hidden;
+    }
+    #logo-low {
+        visibility: visible;
+        position: absolute;
+        bottom: 15px;
+        width: 100px;
+    }
+    #Container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: row wrap;
+        padding-top: 50px;
+        padding-bottom: 60px;
+    }
+    #Container div:nth-child(1) {
+        order:2;
+    }
+    #Container div:nth-child(2) {
+        order:1;
+    }
+    #Container div:nth-child(3) {
+        order:3;
+    }
+    .present {
+        margin-right: 30px;
+        margin-left: 30px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        width: 90%;
+        
+    }
+    nav div a:last-child {
+        margin-right: 6%;
+        margin-left: 6%;
+    }
+    .present p {
+        width: 100%;
+        text-align: center;
+        font-size: 30px;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .present p:nth-child(3) {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    #avis {
+        justify-content: center;
+    }
+    #avis p{
+        padding-top: 30px;
+        margin-bottom: 200px;
+        font-size: 25px;
+    }
+    #circle {
+        width: 300px;
+        height: 300px;
+    }
+    #circle img{
+        width: 140px;
+        height: 180px;
+    }
+    #under_carou{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        font-size: 30px;
+        text-align: center;
+    }
+    #foot {
+        font-size: 20px;
+    }
+    #forme p{
+        position: absolute;
+        bottom: -26%;
+        left: 16%;
+        font-size: 20px;
+    }
+    #reseaux p {
+        text-align: center;
+    }
+}
+
+@media all and (min-width:360px) and (max-width:557px){
+    #carou {
+        margin-top: 100px;
+    }
+    #under_carou{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        font-size: 25px;
+        text-align: center;
+    }
+    nav div a {
+        font-size: 18px;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+    }
+    #layout {
+        margin-left: 15px;
+        width: 100px;
+    }
+    #logo {
+        bottom: 2px;
+        width: 200px;
+        height: 100%;
+    }
+    nav div a:nth-child(1) {
+        visibility: hidden;
+        width: 0px;
+        height: 0px;
+    }
+    nav div a:nth-child(2) {
+        
+    }
+    nav div a:nth-child(3) {
+        visibility: hidden;
+        width: 0px;
+        height: 0px;
+    }
+    .menu::after{
+        width: 1px;
+        height: 57px;
+        position: absolute;
+        left: -11px;
+        bottom: -17px;
+        border-left: 1px solid grey;
+        box-shadow: -0.5px 0.5px 2px 0px rgba(0, 0, 0, 0.2);
+    }
+    nav div div {
+        margin-right: 30px;
+    }
+    #profil {
+        position: relative;
+        margin-top: 5px;
+        width: 70px;
+    }
+    #relat::after{
+        content:'';
+        width: 1px;
+        height: 75px;
+        position: absolute;
+        left: -30px;
+        bottom: 5px;
+        border-left: 1px solid grey;
+        box-shadow: -0.5px 0.5px 2px 0px rgba(0, 0, 0, 0.2);
+    }
+    #logo {
+        visibility: hidden;
+    }
+    #logo-low {
+        visibility: visible;
+        position: absolute;
+        bottom: 15px;
+        width: 100px;
+    }
+    #Container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: row wrap;
+        padding-top: 50px;
+        padding-bottom: 60px;
+    }
+    #Container div:nth-child(1) {
+        order:2;
+    }
+    #Container div:nth-child(2) {
+        order:1;
+    }
+    #Container div:nth-child(3) {
+        order:3;
+    }
+    nav div a:last-child {
+        margin-right: 6%;
+        margin-left: 6%;
+    }
+   .present {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 90%;
+    }
+    .present p {
+        font-size: 25px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 50px;
+        text-align: center;
+    }
+    .check {
+        width: 52px;
+        height: 53px;
+    }
+    #avis {
+        justify-content: center;
+    }
+    #avis p{
+        padding-top: 30px;
+        margin-bottom: 250px;
+        font-size: 20px;
+    }
+    #circle {
+        width: 300px;
+        height: 300px;
+    }
+    #circle img{
+        width: 140px;
+        height: 180px;
+    }
+    #foot {
+        font-size: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    #forme p{
+        position: absolute;
+        bottom: -27%;
+        left: 12%;
+        font-size: 17px;
+    }
+    #reseaux p {
+        text-align: center;
+    }
+}
